@@ -67,6 +67,7 @@ tmap_mode("view")
 ## tmap mode set to interactive viewing
 ```
 
+
 Currents information about the flow directions is usually split into horizontal
 ($u$) and vertical ($v$) components, regarding the horizontal and the vertical
 flow of the currents, respectively. As an example we use a cropped subset of the
