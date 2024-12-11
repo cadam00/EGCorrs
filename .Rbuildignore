@@ -1,4 +1,16 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^\.Rhistory$
+^dev$
+^doc$
+^Meta$
+^revdep$
+^\.github$
+^biblio\.bib$
+^cran-comments\.md$
 ^LICENSE$
-^cran-comments.md$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^CITATION\.cff$
+^codecov.yml$
