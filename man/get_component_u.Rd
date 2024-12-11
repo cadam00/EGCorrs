@@ -33,7 +33,7 @@ Last Access: 16/10/2024.
 
 \seealso{
 \code{
-\link[SeaGames]{get_component_v}
+\link[EGCorrs]{get_component_v}
 }
 }
 
