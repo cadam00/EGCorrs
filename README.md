@@ -45,7 +45,7 @@ library(EGCorrs)
 library(sf)
 ```
 ```
-Linking to GEOS 3.12.1, GDAL 3.8.4, PROJ 9.3.1; sf_use_s2() is TRUE
+## Linking to GEOS 3.12.1, GDAL 3.8.4, PROJ 9.3.1; sf_use_s2() is TRUE
 ```
 ```r
 library(terra)

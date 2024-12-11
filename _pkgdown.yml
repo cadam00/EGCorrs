@@ -1,0 +1,22 @@
+url: https://cadam00.github.io/EGCorrs/
+template:
+  bootstrap: 5
+  math-rendering: mathjax
+navbar:
+  left:
+  - icon: fa-home
+    href: index.html
+    aria-label: GitHub
+  - text: Reference
+    href: reference/index.html
+  - text: News
+    href: news/index.html
+  structure:
+    left:
+    - intro
+    - reference
+    - news
+    right:
+    - github
+    - lightswitch
+
