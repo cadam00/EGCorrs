@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/articles/special-files.html
 
 library(testthat)
-library(SeaGames)
+library(EGCorrs)
 
-test_check("SeaGames")
+test_check("EGCorrs")
