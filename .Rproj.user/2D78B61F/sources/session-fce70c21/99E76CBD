@@ -1,0 +1,26 @@
+{
+    "id": "99E76CBD",
+    "path": "~/packages/EGCorrs/tests/testthat/test-get_component_u.r",
+    "project_path": "tests/testthat/test-get_component_u.r",
+    "type": "r_source",
+    "hash": "3289276883",
+    "contents": "",
+    "dirty": false,
+    "created": 1733644056557.0,
+    "source_on_save": false,
+    "relative_order": 8,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "7,16",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1733929821,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1733929821,
+    "read_only": false,
+    "read_only_alternatives": []
+}

@@ -1,0 +1,42 @@
+Package: EGCorrs
+Type: Package
+Title: Evolutionary Game Corridors
+Version: 0.1.0
+Authors@R: c(person("Nikolaos", "Nagkoulis", role = "aut",
+             email = "nikolaosn@civil.auth.gr",
+             comment = c(ORCID = "0000-0002-1900-2634")),
+             person("Antonios D.", "Mazaris", role = "aut",
+             email = "amazaris@bio.auth.gr",
+             comment = c(ORCID = "0000-0002-4961-5490")),
+             person("Christos", "Adam", role = c("aut", "cre"),
+             email = "econp266@econ.soc.uoc.gr",
+             comment = c(ORCID = "0009-0003-3244-7034")),
+             person("Stelios", "Katsanevakis", role = "aut",
+             email = "stelios@katsanevakis.com",
+             comment = c(ORCID = "0000-0002-5137-7540"))
+             )
+Maintainer: Christos Adam <econp266@econ.soc.uoc.gr>
+Description: Dynamic evolutionary congestion game is developed to get species
+             corridors. The main strength of the model is that it can take
+             vector fields as input layers, making it ideal to model species
+             distributions in marine environments using current layers.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+URL: https://github.com/cadam00/EGCorrs, https://cadam00.github.io/EGCorrs/
+BugReports: https://github.com/cadam00/EGCorrs/issues
+Imports:
+    methods,
+    utils,
+    igraph,
+    sfnetworks,
+    sf,
+    terra
+RoxygenNote: 7.3.2
+Suggests: 
+    tmap,
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+VignetteBuilder: knitr, rmarkdown

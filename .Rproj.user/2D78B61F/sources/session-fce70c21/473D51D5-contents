@@ -1,0 +1,6 @@
+get_destination_areas <- function(){
+  destination_areas <-
+    st_read(system.file("external/destination_areas/destination_areas.shp",
+                        package="SeaGames"))
+  st_transform(destination_areas, crs(get_component_u()))
+}

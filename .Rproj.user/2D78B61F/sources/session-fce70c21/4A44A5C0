@@ -1,0 +1,26 @@
+{
+    "id": "4A44A5C0",
+    "path": "~/packages/EGCorrs/R/EGCorrs.R",
+    "project_path": "R/EGCorrs.R",
+    "type": "r_source",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1733567680458.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "580,0",
+        "scrollLine": "568"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1733930627,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1733930627312,
+    "read_only": false,
+    "read_only_alternatives": []
+}

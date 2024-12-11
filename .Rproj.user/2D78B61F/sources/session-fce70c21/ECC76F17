@@ -1,0 +1,26 @@
+{
+    "id": "ECC76F17",
+    "path": "~/packages/EGCorrs/tests/testthat/test-get_destination_areas.r",
+    "project_path": "tests/testthat/test-get_destination_areas.r",
+    "type": "r_source",
+    "hash": "2910053543",
+    "contents": "",
+    "dirty": false,
+    "created": 1733930895225.0,
+    "source_on_save": false,
+    "relative_order": 15,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "9,30",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1733930939,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1733930939268,
+    "read_only": false,
+    "read_only_alternatives": []
+}
