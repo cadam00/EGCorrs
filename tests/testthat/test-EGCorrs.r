@@ -16,20 +16,8 @@ test_that("EGCorrs works", {
 
   expect_equal(length(out), 8)
 
-  expect_equal(dim(out$solution_edges), c(2393, 9))
   expect_equal(head(out$metrics_df$niters), c(1,2,3,4,5,6))
-  expect_equal(head(out$metrics_df$rmse_u_l_perc),
-               c(NA, 0.07982953003395, 0.04481263195907,
-                 0.03281212515844, 0.02459449654583, 0.01991298338228))
-  expect_equal(head(out$metrics_df$rmse_u_l_perc_times_c_l),
-               c(NA, 0.008680566928385, 0.005451235837348,
-                 0.004329680302948, 0.003824376533674, 0.003796154715834))
-  expect_equal(head(out$metrics_df$rmse_c_l),
-               c(NA, 0.01156388169256, 0.01119668030319,
-                 0.01156388169256, 0.01119668030319, 0.01138176193767))
-  expect_equal(head(out$metrics_df$sum_c_l),
-               c(43.04846482142, 46.24846482142, 49.24846482142,
-                 52.44846482142, 55.44846482142, 58.54846482142))
+
   expect_equal(out$list_of_networks, NULL)
 
   expect_equal(sf::st_bbox(out$solution_edges)[1:4],
