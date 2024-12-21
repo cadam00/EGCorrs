@@ -28,7 +28,7 @@ points_function<-function(npoints, areas){
                      round(sum(points_vec)) - sum(points_new))
   points_new[indices] <- points_new[indices] + 1
 
-  for (i in seq.int(n_multipolygons)){
+  for (i in seq_len(n_multipolygons)){
     outpoints[[i]] <-
       st_sample(st_make_valid(areas[i,]),
                 size = points_new[i],
@@ -38,7 +38,7 @@ points_function<-function(npoints, areas){
 }
 melt_neighbours <- function(input_to_melt){
   dim_input_to_melt <- dim(input_to_melt)
-  nn_results_edges <- matrix(c(rep(seq.int(dim_input_to_melt[1]),
+  nn_results_edges <- matrix(c(rep(seq_len(dim_input_to_melt[1]),
                                    times = dim_input_to_melt[2]),
                                input_to_melt),
                              nrow = dim_input_to_melt[1] * dim_input_to_melt[2],
@@ -48,7 +48,7 @@ melt_neighbours <- function(input_to_melt){
   nn_results_edges <-
     nn_results_edges[nn_results_edges[,1] != nn_results_edges[,2],]
   return(cbind(nn_results_edges[!duplicated(
-    t(vapply(seq.int(nrow(nn_results_edges)),
+    t(vapply(seq_len(nrow(nn_results_edges)),
              function(i)
                sort(nn_results_edges[i,]),
              numeric(2)))),],
@@ -70,7 +70,7 @@ greedy_match<- function(dist_matrix) {
   matched_pairs   <- matrix(nrow = dim_dist[1], ncol = 2)
   col_unavailable <- logical(dim_dist[2])
 
-  for (cc in seq.int(dim_dist[1])) {
+  for (cc in seq_len(dim_dist[1])) {
 
     # From cc point to all the ending points
     current_row                  <- dist_matrix[cc, ]
@@ -259,12 +259,12 @@ EGCorrs <- function(component_u, component_v, origin_areas, destination_areas,
   points_component_v <- extract(component_v, vect_centroids_within_polygon)
 
 
-  two_ngnp1           <- seq(from=2, to=(nearest_grid_nodes+1), by=1)
+  two_ngnp1           <- seq.int(from=2, to=(nearest_grid_nodes+1), by=1)
 
   distances_1          <- st_distance(random_points_1, centroids_within_polygon)
   closest_metrics_dframe_1 <- matrix(ncol=nearest_grid_nodes,
                                      nrow=length(random_points_1))
-  for (i in seq.int(length(random_points_1))){
+  for (i in seq_along(random_points_1)){
     closest_metrics_dframe_1[i,] <- order(distances_1[i,])[two_ngnp1]
   }
 
@@ -276,7 +276,7 @@ EGCorrs <- function(component_u, component_v, origin_areas, destination_areas,
   distances_2          <- st_distance(random_points_2, centroids_within_polygon)
   closest_metrics_dframe_2 <- matrix(ncol=nearest_grid_nodes,
                                      nrow=length(random_points_2))
-  for (i in seq.int(length(random_points_2))){
+  for (i in seq_along(random_points_2)){
     closest_metrics_dframe_2[i,] <- order(distances_2[i,])[two_ngnp1]
   }
 
@@ -286,8 +286,8 @@ EGCorrs <- function(component_u, component_v, origin_areas, destination_areas,
   distances_nn      <- st_distance(centroids_within_polygon)
   nrow_distances_nn <- nrow(distances_nn)
   input_grid_graph  <- matrix(ncol = k_neighbors, nrow = nrow_distances_nn)
-  two_kp1           <- seq(from=2, to=(k_neighbors+1), by=1)
-  for (i in seq.int(nrow_distances_nn)){
+  two_kp1           <- seq.int(from=2, to=(k_neighbors+1), by=1)
+  for (i in seq_len(nrow_distances_nn)){
     input_grid_graph[i,] <- order(distances_nn[i,])[two_kp1]
   }
 
@@ -301,7 +301,7 @@ EGCorrs <- function(component_u, component_v, origin_areas, destination_areas,
   nrow_edge_list_i <- nrow(edge_list_i)
   edges_list       <- vector(mode = "list", length  = nrow_edge_list_i)
   values           <- numeric(nrow_edge_list_i)
-  for (i in seq.int(nrow_edge_list_i)){
+  for (i in seq_len(nrow_edge_list_i)){
     first_point     <- edge_list_i[i,1]
     second_point    <- edge_list_i[i,2]
     edges_list[[i]] <- st_linestring(
@@ -388,7 +388,8 @@ EGCorrs <- function(component_u, component_v, origin_areas, destination_areas,
     pb <- txtProgressBar(0, length(niters), style = 3)
     on.exit(close(pb))
   }
-  seq_int_niters <- seq.int(niters)
+  seq_int_niters  <- seq_len(niters)
+  seq_len_npoints <- seq_len(npoints)
   for(i in seq_int_niters){
     if (progBar) setTxtProgressBar(pb, i)
     # if (verbose) message(paste0("Iteration: ", i))
@@ -409,7 +410,7 @@ EGCorrs <- function(component_u, component_v, origin_areas, destination_areas,
 
     # We get the edges between the starting points and the ending points
     keep_edges     <- vector(mode = "list", length = npoints)
-    for (j in seq.int(npoints)){
+    for (j in seq_len_npoints){
       keep_edges[[j]] <- as.numeric(
         shortest_paths(
           graph  = net_result_loop,
@@ -536,14 +537,10 @@ EGCorrs <- function(component_u, component_v, origin_areas, destination_areas,
                            "rmse_u_l_perc"             = NA,
                            "rmse_u_l_perc_times_c_l"   = NA,
                            "rmse_c_l"                  = NA,
-                           # "sum_demeaned_c_l"          = NA,
-                           # "sum_c_l_minus_global_mean" = NA,
                            "sum_c_l"                   = NA
   )
 
   metrics_df$sum_c_l[1] <- sum(list_of_congestion[[1]]$c_l)
-
-  global_c_l_mean <- mean(sapply(list_of_congestion, function(x) x$c_l))
 
   metrics_df[,1] <- seq_int_niters
   for (i in seq_int_niters[-1]){
